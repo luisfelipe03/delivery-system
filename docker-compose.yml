@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: delivery_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: delivery_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: delivery_rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"   # porta de conexão AMQP
+      - "15672:15672" # painel web
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+
+volumes:
+  pgdata:
+
