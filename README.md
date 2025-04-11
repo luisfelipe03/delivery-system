@@ -60,3 +60,8 @@ mvn clean install
 # rodar módulo de API
 cd delivery-api
 mvn spring-boot:run
+```
+
+---
+
+Desenvolvido por Luis Felipe · [LinkedIn](https://www.linkedin.com/in/luis-felipe-contrate/)
